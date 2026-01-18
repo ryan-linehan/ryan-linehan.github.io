@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Ryan Linehan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="noise"></div>
+
+    <nav class="nav">
+        <a href="/index.html" class="nav-logo">
+            <span class="blink">_</span>RL
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/index.html#about" data-text="ABOUT">ABOUT</a></li>
+            <li><a href="/games.html" data-text="GAMES">GAMES</a></li>
+            <li><a href="/projects.html" data-text="PROJECTS">PROJECTS</a></li>
+            <li><a href="/blog.html" data-text="BLOG" class="active">BLOG</a></li>
+            <li><a href="/index.html#contact" data-text="CONTACT">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <div class="hero-tag">
+                    <span class="tag-bracket">[</span>
+                    <span class="tag-text">{{ page.category | upcase }}</span>
+                    <span class="tag-bracket">]</span>
+                </div>
+                <h1 class="page-title post-title">{{ page.title }}</h1>
+                <p class="page-subtitle">
+                    <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
+                </p>
+            </div>
+        </section>
+
+        <article class="post-content">
+            <div class="post-body">
+                {{ content }}
+            </div>
+
+            <div class="post-footer">
+                <a href="/blog.html" class="back-to-blog">
+                    <span class="arrow">&larr;</span> BACK TO BLOG
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <span class="footer-text">&copy; 2025 RYAN LINEHAN</span>
+            <span class="footer-separator">|</span>
+            <span class="footer-text">BUILT WITH <span class="heart">&#9829;</span> AND CODE</span>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

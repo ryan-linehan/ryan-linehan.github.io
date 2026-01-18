@@ -1,0 +1,12 @@
+title: Ryan Linehan
+description: Game developer
+url: "https://ryan-linehan.github.io"
+
+permalink: /blog/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
