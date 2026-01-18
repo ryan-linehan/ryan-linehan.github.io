@@ -1,74 +1,109 @@
 ---
-layout: default
-title: Blog
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Ryan Linehan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="noise"></div>
 
-<section class="page-hero">
-    <div class="page-hero-content">
-        <div class="hero-tag">
-            <span class="tag-bracket">[</span>
-            <span class="tag-text">BLOG</span>
-            <span class="tag-bracket">]</span>
-        </div>
-        <h1 class="page-title">DEV LOG</h1>
-        <p class="page-subtitle">Game development progress, tutorials, and thoughts.</p>
-    </div>
-</section>
+    <nav class="nav">
+        <a href="/" class="nav-logo">
+            <span class="blink">_</span>RL
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/#about">ABOUT</a></li>
+            <li><a href="/games.html">GAMES</a></li>
+            <li><a href="/projects.html">PROJECTS</a></li>
+            <li><a href="/blog.html" class="active">BLOG</a></li>
+            <li><a href="/#contact">CONTACT</a></li>
+        </ul>
+    </nav>
 
-<section class="blog-section">
-    <div class="blog-filters">
-        <button class="filter-btn active" data-filter="all">ALL</button>
-        <button class="filter-btn" data-filter="devlog">DEV LOGS</button>
-        <button class="filter-btn" data-filter="tutorial">TUTORIALS</button>
-        <button class="filter-btn" data-filter="thoughts">THOUGHTS</button>
-    </div>
-
-    <div class="blog-grid">
-        {% for post in site.posts %}
-        <article class="blog-card" data-category="{{ post.category }}">
-            <div class="blog-card-header">
-                <span class="blog-category category-{{ post.category }}">{{ post.category | upcase }}</span>
-                <span class="blog-date">{{ post.date | date: "%b %d, %Y" }}</span>
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <div class="hero-tag">
+                    <span class="tag-bracket">[</span>
+                    <span class="tag-text">BLOG</span>
+                    <span class="tag-bracket">]</span>
+                </div>
+                <h1 class="page-title">DEV LOG</h1>
+                <p class="page-subtitle">Game development progress, tutorials, and thoughts.</p>
             </div>
-            <h2 class="blog-card-title">{{ post.title }}</h2>
-            <p class="blog-card-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
-            <div class="blog-card-tags">
-                {% for tag in post.tags %}
-                <span>{{ tag }}</span>
+        </section>
+
+        <section class="blog-section">
+            <div class="blog-filters">
+                <button class="filter-btn active" data-filter="all">ALL</button>
+                <button class="filter-btn" data-filter="devlog">DEV LOGS</button>
+                <button class="filter-btn" data-filter="tutorial">TUTORIALS</button>
+                <button class="filter-btn" data-filter="thoughts">THOUGHTS</button>
+            </div>
+
+            <div class="blog-grid">
+                {% for post in site.posts %}
+                <article class="blog-card" data-category="{{ post.category }}">
+                    <div class="blog-card-header">
+                        <span class="blog-category category-{{ post.category }}">{{ post.category | upcase }}</span>
+                        <span class="blog-date">{{ post.date | date: "%b %d, %Y" }}</span>
+                    </div>
+                    <h2 class="blog-card-title">{{ post.title }}</h2>
+                    <p class="blog-card-excerpt">{{ post.excerpt }}</p>
+                    <div class="blog-card-tags">
+                        {% for tag in post.tags %}
+                        <span>{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <a href="{{ post.url }}" class="blog-read-more">
+                        READ MORE <span class="arrow">&rarr;</span>
+                    </a>
+                </article>
                 {% endfor %}
             </div>
-            <a href="{{ post.url | relative_url }}" class="blog-read-more">
-                READ MORE <span class="arrow">&rarr;</span>
-            </a>
-        </article>
-        {% endfor %}
-    </div>
-</section>
+        </section>
+    </main>
 
-<script>
-    // Blog filter functionality
-    document.addEventListener('DOMContentLoaded', () => {
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const blogCards = document.querySelectorAll('.blog-card');
+    <footer class="footer">
+        <div class="footer-content">
+            <span>&copy; 2025 RYAN LINEHAN</span>
+            <span class="footer-separator">|</span>
+            <span>BUILT WITH <span class="heart">&#9829;</span> AND CODE</span>
+        </div>
+    </footer>
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Update active button
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
 
-                const filter = btn.dataset.filter;
-
-                // Filter cards
-                blogCards.forEach(card => {
-                    if (filter === 'all' || card.dataset.category === filter) {
-                        card.style.display = 'block';
-                        card.style.animation = 'fadeSlideIn 0.5s ease forwards';
-                    } else {
-                        card.style.display = 'none';
-                    }
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filter = btn.dataset.filter;
+                    blogCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
                 });
             });
         });
-    });
-</script>
+    </script>
+</body>
+</html>
