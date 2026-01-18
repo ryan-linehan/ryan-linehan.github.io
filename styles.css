@@ -118,7 +118,8 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    background: linear-gradient(to bottom, var(--bg-primary) 0%, transparent 100%);
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--bg-tertiary);
 }
 
 .nav-logo {
@@ -906,16 +907,24 @@ section {
 
 /* Page Hero */
 .page-hero {
-    min-height: 40vh;
+    min-height: 30vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: calc(var(--space-2xl) + 60px) var(--space-xl) var(--space-xl);
+    padding: calc(var(--space-xl) + 80px) var(--space-xl) var(--space-lg);
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .page-hero-content {
     max-width: 800px;
+}
+
+.page-hero .hero-tag {
+    justify-content: center;
+    opacity: 1;
+    animation: none;
 }
 
 .page-title {
@@ -923,16 +932,13 @@ section {
     font-size: clamp(2.5rem, 6vw, 4rem);
     color: var(--accent-cyan);
     text-shadow: var(--glow-cyan);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-sm);
     animation: fadeSlideIn 0.8s ease forwards;
 }
 
 .page-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    animation: fadeSlideIn 0.8s ease forwards;
-    animation-delay: 0.2s;
-    opacity: 0;
 }
 
 /* Nav Logo as Link */
@@ -1022,9 +1028,10 @@ a.nav-logo:hover {
 
 .game-content {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 180px;
     gap: var(--space-xl);
     margin-bottom: var(--space-lg);
+    align-items: start;
 }
 
 .game-description p {
@@ -1067,6 +1074,9 @@ a.nav-logo:hover {
     flex-direction: column;
     gap: var(--space-md);
     min-width: 150px;
+    background: var(--bg-primary);
+    padding: var(--space-md);
+    border: 1px solid var(--bg-tertiary);
 }
 
 .meta-item {
