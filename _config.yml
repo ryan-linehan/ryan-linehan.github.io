@@ -1,28 +1,10 @@
-# Site settings
-title: Ryan Linehan | Developer
-description: Game development progress, tutorials, and thoughts.
+title: Ryan Linehan
 url: "https://ryan-linehan.github.io"
-baseurl: ""
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
-
-# Permalink structure for blog posts
-# Posts will be at /blog/post-title/
 permalink: /blog/:title/
 
-# Default front matter
 defaults:
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-
-# Exclude from processing
-exclude:
-  - README.md
-  - LICENSE
-  - Gemfile
-  - Gemfile.lock
