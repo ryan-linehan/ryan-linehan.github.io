@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "tribal-trouble-multiplayer-islands",
+    "title": "Tribal Trouble Revival: Adding Multiplayer Islands",
+    "date": "2025-01-15",
+    "category": "devlog",
+    "tags": ["Tribal Trouble", "Java", "Multiplayer"],
+    "excerpt": "One of the most requested features for the Tribal Trouble revival has been the ability to have multiple islands on a single map."
+  },
+  {
+    "slug": "steam-achievements-godot-csharp",
+    "title": "Integrating Steam Achievements in Godot with C#",
+    "date": "2025-01-08",
+    "category": "tutorial",
+    "tags": ["Godot", "C#", "Steam"],
+    "excerpt": "A step-by-step guide to setting up Steam achievements in your Godot game using C#."
+  },
+  {
+    "slug": "open-source-game-development",
+    "title": "Why I Believe in Open Source Game Development",
+    "date": "2024-12-28",
+    "category": "thoughts",
+    "tags": ["Open Source", "Game Dev", "Community"],
+    "excerpt": "After seeing multiple closed revival attempts fail, I've been thinking about why open source matters."
+  }
+]

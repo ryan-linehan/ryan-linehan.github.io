@@ -1,12 +1,3 @@
----
-layout: post
-title: "Tribal Trouble Revival: Adding Multiplayer Islands"
-date: 2025-01-15
-category: devlog
-tags: [Tribal Trouble, Java, Multiplayer]
-excerpt: "One of the most requested features for the Tribal Trouble revival has been the ability to have multiple islands on a single map. Today I'm excited to share our progress on implementing this feature..."
----
-
 One of the most requested features for the Tribal Trouble revival has been the ability to have multiple islands on a single map. Today I'm excited to share our progress on implementing this feature.
 
 ## The Challenge
