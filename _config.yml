@@ -15,7 +15,7 @@ permalink: /blog/:title/
 # Default front matter
 defaults:
   - scope:
-      path: "_posts"
+      path: ""
       type: "posts"
     values:
       layout: "post"
