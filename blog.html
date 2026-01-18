@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Ryan Linehan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="noise"></div>
+
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">
+            <span class="blink">_</span>RL
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html#about" data-text="ABOUT">ABOUT</a></li>
+            <li><a href="games.html" data-text="GAMES">GAMES</a></li>
+            <li><a href="projects.html" data-text="PROJECTS">PROJECTS</a></li>
+            <li><a href="blog.html" data-text="BLOG" class="active">BLOG</a></li>
+            <li><a href="index.html#contact" data-text="CONTACT">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <div class="hero-tag">
+                    <span class="tag-bracket">[</span>
+                    <span class="tag-text">BLOG</span>
+                    <span class="tag-bracket">]</span>
+                </div>
+                <h1 class="page-title">DEV LOG</h1>
+                <p class="page-subtitle">Game development progress, tutorials, and thoughts.</p>
+            </div>
+        </section>
+
+        <section class="blog-section">
+            <div class="blog-filters">
+                <button class="filter-btn active" data-filter="all">ALL</button>
+                <button class="filter-btn" data-filter="devlog">DEV LOGS</button>
+                <button class="filter-btn" data-filter="tutorial">TUTORIALS</button>
+                <button class="filter-btn" data-filter="thoughts">THOUGHTS</button>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card" data-category="devlog">
+                    <div class="blog-card-header">
+                        <span class="blog-category category-devlog">DEV LOG</span>
+                        <span class="blog-date">Jan 15, 2025</span>
+                    </div>
+                    <h2 class="blog-card-title">Tribal Trouble Revival: Adding Multiplayer Islands</h2>
+                    <p class="blog-card-excerpt">One of the most requested features for the Tribal Trouble revival has been the ability to have multiple islands on a single map. Today I'm excited to share our progress on implementing this feature...</p>
+                    <div class="blog-card-tags">
+                        <span>Tribal Trouble</span>
+                        <span>Java</span>
+                        <span>Multiplayer</span>
+                    </div>
+                    <a href="#" class="blog-read-more">
+                        READ MORE <span class="arrow">→</span>
+                    </a>
+                </article>
+
+                <article class="blog-card" data-category="tutorial">
+                    <div class="blog-card-header">
+                        <span class="blog-category category-tutorial">TUTORIAL</span>
+                        <span class="blog-date">Jan 8, 2025</span>
+                    </div>
+                    <h2 class="blog-card-title">Integrating Steam Achievements in Godot with C#</h2>
+                    <p class="blog-card-excerpt">A step-by-step guide to setting up Steam achievements in your Godot game using C#. We'll cover the Steamworks SDK, native signals, and cross-platform considerations...</p>
+                    <div class="blog-card-tags">
+                        <span>Godot</span>
+                        <span>C#</span>
+                        <span>Steam</span>
+                    </div>
+                    <a href="#" class="blog-read-more">
+                        READ MORE <span class="arrow">→</span>
+                    </a>
+                </article>
+
+                <article class="blog-card" data-category="thoughts">
+                    <div class="blog-card-header">
+                        <span class="blog-category category-thoughts">THOUGHTS</span>
+                        <span class="blog-date">Dec 28, 2024</span>
+                    </div>
+                    <h2 class="blog-card-title">Why I Believe in Open Source Game Development</h2>
+                    <p class="blog-card-excerpt">After seeing multiple "closed" revival attempts of Tribal Trouble fail, I've been thinking about why open source matters for game preservation and community building...</p>
+                    <div class="blog-card-tags">
+                        <span>Open Source</span>
+                        <span>Game Dev</span>
+                        <span>Community</span>
+                    </div>
+                    <a href="#" class="blog-read-more">
+                        READ MORE <span class="arrow">→</span>
+                    </a>
+                </article>
+
+                <article class="blog-card" data-category="devlog">
+                    <div class="blog-card-header">
+                        <span class="blog-category category-devlog">DEV LOG</span>
+                        <span class="blog-date">Dec 15, 2024</span>
+                    </div>
+                    <h2 class="blog-card-title">Building the Discord Bot for Tribal Trouble</h2>
+                    <p class="blog-card-excerpt">We wanted a way for players to interact with the game from Discord - checking match status, viewing replays, and getting notifications. Here's how we built it...</p>
+                    <div class="blog-card-tags">
+                        <span>Tribal Trouble</span>
+                        <span>Discord</span>
+                        <span>Integration</span>
+                    </div>
+                    <a href="#" class="blog-read-more">
+                        READ MORE <span class="arrow">→</span>
+                    </a>
+                </article>
+
+                <article class="blog-card" data-category="tutorial">
+                    <div class="blog-card-header">
+                        <span class="blog-category category-tutorial">TUTORIAL</span>
+                        <span class="blog-date">Dec 1, 2024</span>
+                    </div>
+                    <h2 class="blog-card-title">Creating a Debug Console for Your Godot Game</h2>
+                    <p class="blog-card-excerpt">How to use limbo_console_sharp to add a powerful in-game debug console to your C# Godot project. Includes custom commands and variable inspection...</p>
+                    <div class="blog-card-tags">
+                        <span>Godot</span>
+                        <span>C#</span>
+                        <span>Debugging</span>
+                    </div>
+                    <a href="#" class="blog-read-more">
+                        READ MORE <span class="arrow">→</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <span class="footer-text">&copy; 2025 RYAN LINEHAN</span>
+            <span class="footer-separator">|</span>
+            <span class="footer-text">BUILT WITH <span class="heart">♥</span> AND CODE</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Blog filter functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.dataset.filter;
+
+                    // Filter cards
+                    blogCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeSlideIn 0.5s ease forwards';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

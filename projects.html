@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Ryan Linehan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="noise"></div>
+
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">
+            <span class="blink">_</span>RL
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html#about" data-text="ABOUT">ABOUT</a></li>
+            <li><a href="games.html" data-text="GAMES">GAMES</a></li>
+            <li><a href="projects.html" data-text="PROJECTS" class="active">PROJECTS</a></li>
+            <li><a href="blog.html" data-text="BLOG">BLOG</a></li>
+            <li><a href="index.html#contact" data-text="CONTACT">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <div class="hero-tag">
+                    <span class="tag-bracket">[</span>
+                    <span class="tag-text">OPEN SOURCE</span>
+                    <span class="tag-bracket">]</span>
+                </div>
+                <h1 class="page-title">PROJECTS</h1>
+                <p class="page-subtitle">Godot plugins and open source contributions.</p>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <div class="projects-grid">
+                <article class="project-detail-card">
+                    <div class="project-detail-header">
+                        <span class="project-badge">GODOT PLUGIN</span>
+                        <h2 class="project-detail-title">Godot.Steamworks.NET</h2>
+                    </div>
+                    <p class="project-detail-desc">A C# Godot plugin that helps consume the Steam SDK in a Godot game with native Godot signals. Works on <span class="highlight">any CPU architecture</span>.</p>
+                    <p class="project-detail-desc">Also contributed to fixing a networking issue in the dependent package and helped with CI/CD for the AnyCPU package.</p>
+                    <div class="project-detail-tech">
+                        <span>C#</span>
+                        <span>Godot</span>
+                        <span>Steam SDK</span>
+                    </div>
+                    <div class="project-detail-links">
+                        <a href="https://github.com/ryan-linehan/Godot.Steamworks.NET" class="btn btn-primary" target="_blank" rel="noopener">
+                            <span class="btn-text">VIEW PROJECT</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                    <div class="related-contributions">
+                        <span class="related-label">RELATED CONTRIBUTIONS:</span>
+                        <ul class="contribution-list">
+                            <li><a href="https://github.com/Akarinnnnn/Steamworks.NET.AnyCPU/pull/2" target="_blank" rel="noopener">Steamworks.NET.AnyCPU PR #2</a></li>
+                            <li><a href="https://github.com/Akarinnnnn/Steamworks.NET.AnyCPU/pull/9" target="_blank" rel="noopener">Steamworks.NET.AnyCPU PR #9</a></li>
+                            <li><a href="https://github.com/rlabrecque/Steamworks.NET" target="_blank" rel="noopener">Upstream: Steamworks.NET</a></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project-detail-card">
+                    <div class="project-detail-header">
+                        <span class="project-badge">GODOT PLUGIN</span>
+                        <h2 class="project-detail-title">Godot.Achievements.NET</h2>
+                    </div>
+                    <p class="project-detail-desc">A <span class="highlight">multiplatform achievements wrapper</span> for C# and Godot. Uses preprocessor statements so you don't have to worry about where you're exporting your game - it just works.</p>
+                    <div class="project-detail-tech">
+                        <span>C#</span>
+                        <span>Godot</span>
+                        <span>Cross-Platform</span>
+                    </div>
+                    <div class="project-detail-links">
+                        <a href="https://github.com/ryan-linehan/Godot.Achievements.NET" class="btn btn-primary" target="_blank" rel="noopener">
+                            <span class="btn-text">VIEW PROJECT</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-detail-card">
+                    <div class="project-detail-header">
+                        <span class="project-badge">GODOT PLUGIN</span>
+                        <h2 class="project-detail-title">limbo_console_sharp</h2>
+                    </div>
+                    <p class="project-detail-desc">A C# wrapper for the popular Godot GDScript plugin <span class="highlight">Limbo Console</span>. Brings the console functionality to C# developers working in Godot.</p>
+                    <div class="project-detail-tech">
+                        <span>C#</span>
+                        <span>Godot</span>
+                        <span>Developer Tools</span>
+                    </div>
+                    <div class="project-detail-links">
+                        <a href="https://github.com/ryan-linehan/limbo_console_sharp" class="btn btn-primary" target="_blank" rel="noopener">
+                            <span class="btn-text">VIEW PROJECT</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                        <a href="https://github.com/limbonaut/limbo_console" class="btn btn-secondary" target="_blank" rel="noopener">
+                            <span class="btn-text">ORIGINAL PLUGIN</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-detail-card">
+                    <div class="project-detail-header">
+                        <span class="project-badge">GODOT PLUGIN</span>
+                        <h2 class="project-detail-title">godot_input_icons</h2>
+                    </div>
+                    <p class="project-detail-desc">A plugin that helps to show <span class="highlight">input icons</span> for registered Godot actions in your game. Makes it easy to display controller/keyboard prompts to players.</p>
+                    <div class="project-detail-tech">
+                        <span>Godot</span>
+                        <span>Input System</span>
+                        <span>UI</span>
+                    </div>
+                    <div class="project-detail-links">
+                        <a href="https://github.com/ryan-linehan/godot_input_icons" class="btn btn-primary" target="_blank" rel="noopener">
+                            <span class="btn-text">VIEW PROJECT</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <span class="footer-text">&copy; 2025 RYAN LINEHAN</span>
+            <span class="footer-separator">|</span>
+            <span class="footer-text">BUILT WITH <span class="heart">♥</span> AND CODE</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
