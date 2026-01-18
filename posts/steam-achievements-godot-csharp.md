@@ -1,12 +1,3 @@
----
-layout: post
-title: "Integrating Steam Achievements in Godot with C#"
-date: 2025-01-08
-category: tutorial
-tags: [Godot, C#, Steam]
-excerpt: "A step-by-step guide to setting up Steam achievements in your Godot game using C#. We'll cover the Steamworks SDK, native signals, and cross-platform considerations..."
----
-
 A step-by-step guide to setting up Steam achievements in your Godot game using C#. We'll cover the Steamworks SDK, native signals, and cross-platform considerations.
 
 ## Prerequisites
@@ -19,7 +10,7 @@ Before we dive in, make sure you have:
 
 ## Setting Up GodotSteam
 
-First, we need to integrate the Steamworks SDK. I recommend using my [GodotSteam C# wrapper](https://github.com/ryan-linehan/godotsteam-csharp) which provides a clean C# interface.
+First, we need to integrate the Steamworks SDK.
 
 ### Installation
 

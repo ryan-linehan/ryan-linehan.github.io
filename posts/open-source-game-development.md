@@ -1,12 +1,3 @@
----
-layout: post
-title: "Why I Believe in Open Source Game Development"
-date: 2024-12-28
-category: thoughts
-tags: [Open Source, Game Dev, Community]
-excerpt: "After seeing multiple 'closed' revival attempts of Tribal Trouble fail, I've been thinking about why open source matters for game preservation and community building..."
----
-
 After seeing multiple "closed" revival attempts of Tribal Trouble fail, I've been thinking about why open source matters for game preservation and community building.
 
 ## The Graveyard of Closed Revivals

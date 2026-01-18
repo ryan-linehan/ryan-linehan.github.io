@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Ryan Linehan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="noise"></div>
+
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">
+            <span class="blink">_</span>RL
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html#about">ABOUT</a></li>
+            <li><a href="games.html">GAMES</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="blog.html" class="active">BLOG</a></li>
+            <li><a href="index.html#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <div class="hero-tag">
+                    <span class="tag-bracket">[</span>
+                    <span class="tag-text" id="post-category">BLOG</span>
+                    <span class="tag-bracket">]</span>
+                </div>
+                <h1 class="page-title post-title" id="post-title">Loading...</h1>
+                <p class="page-subtitle" id="post-date"></p>
+            </div>
+        </section>
+
+        <article class="post-content">
+            <div class="post-body" id="post-body">
+                <!-- Markdown content rendered here -->
+            </div>
+            <div class="post-footer">
+                <a href="blog.html" class="back-to-blog">&larr; BACK TO BLOG</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <span>&copy; 2025 RYAN LINEHAN</span>
+            <span class="footer-separator">|</span>
+            <span>BUILT WITH <span class="heart">&#9829;</span> AND CODE</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        async function loadPost() {
+            const params = new URLSearchParams(window.location.search);
+            const slug = params.get('slug');
+
+            if (!slug) {
+                window.location.href = 'blog.html';
+                return;
+            }
+
+            // Get post metadata
+            const indexResponse = await fetch('posts/index.json');
+            const posts = await indexResponse.json();
+            const post = posts.find(p => p.slug === slug);
+
+            if (!post) {
+                document.getElementById('post-title').textContent = 'Post not found';
+                return;
+            }
+
+            // Update page metadata
+            document.title = `${post.title} | Ryan Linehan`;
+            document.getElementById('post-title').textContent = post.title;
+            document.getElementById('post-category').textContent = post.category.toUpperCase();
+            document.getElementById('post-date').textContent = new Date(post.date).toLocaleDateString('en-US', {
+                month: 'long', day: 'numeric', year: 'numeric'
+            });
+
+            // Fetch and render markdown
+            const mdResponse = await fetch(`posts/${slug}.md`);
+            const markdown = await mdResponse.text();
+            document.getElementById('post-body').innerHTML = marked.parse(markdown);
+        }
+
+        loadPost();
+    </script>
+</body>
+</html>
