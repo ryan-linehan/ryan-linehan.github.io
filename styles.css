@@ -1685,6 +1685,69 @@ a.nav-logo:hover {
     transform: translateX(-4px);
 }
 
+/* --------------------------------------------------------------------------
+   NEWSLETTER SIGNUP
+   -------------------------------------------------------------------------- */
+.newsletter-signup {
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--bg-secondary);
+    border: 1px solid var(--bg-tertiary);
+}
+
+.newsletter-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.newsletter-form {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+.newsletter-input {
+    flex: 1;
+    min-width: 200px;
+    padding: var(--space-md);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--bg-tertiary);
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+}
+
+.newsletter-input::placeholder {
+    color: var(--text-muted);
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+    box-shadow: var(--glow-cyan);
+}
+
+.newsletter-btn {
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-input {
+        width: 100%;
+    }
+
+    .newsletter-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 /* Syntax highlighting - rouge compatible */
 .highlight {
     margin: var(--space-lg) 0;
