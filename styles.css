@@ -1748,6 +1748,57 @@ a.nav-logo:hover {
     }
 }
 
+/* Newsletter Form States */
+.newsletter-form.newsletter-loading .newsletter-btn {
+    background: var(--bg-tertiary);
+    border-color: var(--text-muted);
+    color: var(--text-muted);
+    cursor: wait;
+}
+
+.newsletter-form.newsletter-success .newsletter-btn {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+    color: var(--bg-primary);
+}
+
+.newsletter-form.newsletter-success .newsletter-input {
+    border-color: var(--accent-green);
+}
+
+.newsletter-form.newsletter-error .newsletter-btn {
+    background: var(--accent-magenta);
+    border-color: var(--accent-magenta);
+    color: var(--bg-primary);
+}
+
+.newsletter-form.newsletter-error .newsletter-input {
+    border-color: var(--accent-magenta);
+}
+
+.newsletter-message {
+    margin-top: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.85rem;
+    transition: opacity 0.5s ease;
+}
+
+.newsletter-message-success {
+    color: var(--accent-green);
+    border-left: 2px solid var(--accent-green);
+    background: rgba(0, 255, 136, 0.05);
+}
+
+.newsletter-message-error {
+    color: var(--accent-magenta);
+    border-left: 2px solid var(--accent-magenta);
+    background: rgba(255, 0, 170, 0.05);
+}
+
+.newsletter-message-fade {
+    opacity: 0;
+}
+
 /* Syntax highlighting - rouge compatible */
 .highlight {
     margin: var(--space-lg) 0;

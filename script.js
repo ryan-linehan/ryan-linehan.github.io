@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initSmoothScroll();
     initMobileNav();
+    initNewsletterForm();
 });
 
 /* --------------------------------------------------------------------------
@@ -203,6 +204,95 @@ function initMobileNav() {
         console.log('🎮 Achievement Unlocked: Konami Master!');
     }
 })();
+
+/* --------------------------------------------------------------------------
+   NEWSLETTER FORM (AJAX submission)
+   -------------------------------------------------------------------------- */
+function initNewsletterForm() {
+    const form = document.querySelector('.newsletter-form');
+    if (!form) return;
+
+    const emailInput = form.querySelector('.newsletter-input');
+    const submitBtn = form.querySelector('.newsletter-btn');
+    const originalBtnText = submitBtn.textContent;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const email = emailInput.value.trim();
+        if (!email) return;
+
+        // Set loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'SENDING...';
+        form.classList.remove('newsletter-success', 'newsletter-error');
+        form.classList.add('newsletter-loading');
+
+        try {
+            const formData = new FormData();
+            formData.append('email', email);
+
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Buttondown doesn't support CORS, so we use no-cors
+            });
+
+            // With no-cors mode, we can't read the response, but the request still goes through
+            // We'll assume success if no error was thrown
+            form.classList.remove('newsletter-loading');
+            form.classList.add('newsletter-success');
+            submitBtn.textContent = 'SUBSCRIBED!';
+            emailInput.value = '';
+
+            // Show success message
+            showNewsletterMessage(form, 'success', 'Thanks for subscribing! Check your email to confirm.');
+
+            // Reset button after delay
+            setTimeout(() => {
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            }, 3000);
+
+        } catch (error) {
+            form.classList.remove('newsletter-loading');
+            form.classList.add('newsletter-error');
+            submitBtn.textContent = 'ERROR';
+
+            // Show error message
+            showNewsletterMessage(form, 'error', 'Something went wrong. Please try again.');
+
+            // Reset button after delay
+            setTimeout(() => {
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+                form.classList.remove('newsletter-error');
+            }, 3000);
+        }
+    });
+}
+
+function showNewsletterMessage(form, type, message) {
+    // Remove any existing message
+    const existingMsg = form.parentElement.querySelector('.newsletter-message');
+    if (existingMsg) existingMsg.remove();
+
+    // Create message element
+    const msgEl = document.createElement('p');
+    msgEl.className = `newsletter-message newsletter-message-${type}`;
+    msgEl.textContent = message;
+
+    // Insert after form
+    form.after(msgEl);
+
+    // Auto-remove success message after a while
+    if (type === 'success') {
+        setTimeout(() => {
+            msgEl.classList.add('newsletter-message-fade');
+            setTimeout(() => msgEl.remove(), 500);
+        }, 5000);
+    }
+}
 
 /* --------------------------------------------------------------------------
    CURSOR GLOW EFFECT (subtle)
